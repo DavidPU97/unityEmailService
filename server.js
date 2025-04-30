@@ -20,8 +20,8 @@ app.post('/sendemail', async (req, res) => {
     });
 
     const mailOptions = {
-        from: 'yourgmail@gmail.com',
-        to: 'recipient@example.com',
+        from: 'david.pu1997@gmail.com',
+        to: 'david.pu97@gmail.com',
         subject: `Message from ${name}`,
         text: message
     };
