@@ -1,5 +1,5 @@
-const multer = require('multer');
-const upload = multer();
+//const multer = require('multer');
+//const upload = multer();
 const express = require('express');
 const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
@@ -10,7 +10,7 @@ const port = 3000;
 app.use(bodyParser.json());
 
 // Email POST endpoint
-app.post('/sendemail', upload.single('attachment'), async (req, res) => {
+app.post('/sendemail', /*upload.single('attachment'),*/ async (req, res) => {
     const { name, message } = req.body;
     const file = req.file;
 
@@ -26,13 +26,13 @@ app.post('/sendemail', upload.single('attachment'), async (req, res) => {
         from: 'david.pu1997@gmail.com',
         to: 'david.pu97@gmail.com',
         subject: `Message from ${name}`,
-        text: message,
+        text: message,/*
         attachments: file ? [
             {
                 filename: file.originalname,
                 content: file.buffer
             }
-        ] : []
+        ] : []*/
     };
 
     try {
