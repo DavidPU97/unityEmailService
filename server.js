@@ -10,7 +10,7 @@ const port = 3000;
 app.use(bodyParser.json());
 
 // Email POST endpoint
-app.post('/sendemail', /pload.single('attachment'), async (req, res) => {
+app.post('/sendemail', upload.single('attachment'), async (req, res) => {
     const { name, message } = req.body;
     const file = req.file;
 
