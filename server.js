@@ -25,7 +25,7 @@ app.post('/sendemail', upload.single('attachment'), async (req, res) => {
     const mailOptions = {
         from: 'david.pu1997@gmail.com',
         to: 'david.pu97@gmail.com',
-        subject: `Message from ${name}`,
+        subject: `Sinteza beljakovin simulacija: ${name}`,
         text: message,
         attachments: file ? [
             {
