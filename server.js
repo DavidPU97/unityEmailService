@@ -3,6 +3,7 @@ const upload = multer();
 const express = require('express');
 const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
+require('dotenv').config();
 const app = express();
 const port = 3000;
 
@@ -17,8 +18,8 @@ app.post('/sendemail', upload.single('attachment'), async (req, res) => {
     const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: 'david.pu1997@gmail.com',
-            pass: 'tkewsggjttsixasd' // Use App Password, not real password
+            user: process.env.EMAIL_USER,
+            pass: process.env.EMAIL_PASS
         }
     });
     
